@@ -1,0 +1,29 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.BuscarMascotasModel
+@{
+}
+
+<section class="block-form">
+        <!-- dentro de este va la imagen de cabecera -->
+        <div class="header-form">
+            <img src="~/images/buscar-mascota.png" alt="">
+        </div>
+        <!-- dentro de este va el formulario -->
+        <div class="container-form">
+            <form method="get">
+                <!-- en este form va nuestro contenido de etiquetas inputs botones -->
+                <div class="row-form">
+                    <label for="id1">Id Mascota:</label>
+                    <input id="id1" class="textBox" type="text" name="CajitaIdMascota"  required>
+                </div>
+              
+                <div class="row-form">
+                    <!-- coloco un contenedor vacio al principo y al final para que centre y no tener que hacer otra clase -->
+                    <div></div>
+                    <button class="main-button" asp-area="" asp-page="/Mascotas/DetalleMascota">Buscar</button>
+                    <div></div>
+                </div>                
+            </form>
+        </div>
+    </section>
+

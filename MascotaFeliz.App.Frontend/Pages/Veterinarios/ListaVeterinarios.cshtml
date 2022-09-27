@@ -1,0 +1,59 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.ListaVeterinariosModel
+@{
+}
+
+<section>
+    <h1> LISTADO DE VETERINARIOS </h1>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+    @foreach (var vt in Model.ListaVeterinarios){
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">@vt.Nombres @vt.Apellidos</h5>
+                    <spam class="card-text" style="font-weight: 700;">Id: </spam>
+                    <spam class="card-text">@vt.Id</spam> <br>
+                    <spam class="card-text" style="font-weight: 700;">Nombres: </spam>
+                    <spam class="card-text">@vt.Nombres</spam> <br>
+                    <spam class="card-text" style="font-weight: 700;">Apellidos: </spam>
+                    <spam class="card-text">@vt.Apellidos</spam> <br>              
+                    <spam class="card-text" style="font-weight: 700;">Direccion: </spam>
+                    <spam class="card-text">@vt.Direccion</spam> <br>                                        
+                    <spam class="card-text" style="font-weight: 700;">Telefono: </spam>
+                    <spam class="card-text">@vt.Telefono</spam> <br>
+                    <spam class="card-text" style="font-weight: 700;">T. Profesional: </spam>
+                    <spam class="card-text">@vt.TarjetaProfesional</spam> <br>                                                            
+                    <div style="margin-top: 1rem; text-align:center">
+                        <form class="form-cards" method="get">
+                            <input type="hidden" name="idVeterinario" value="@vt.Id">
+                            <input type="hidden" name="Id" value="@vt.Id">
+                            <button class="main-button" asp-area="" asp-page="/Veterinarios/DetalleVeterinario">+ Info</button>
+                            <button class="main-button" asp-area="" asp-page="/Veterinarios/ActualizarVeterinarios">Actualizar</button>
+                        </form>    
+                    </div>                            
+                </div>
+            </div>
+        </div>    
+    }
+    </div>
+    <table class="table table-striped mt-5">
+        <tr>
+            <th>ID</th>
+            <th>NOMBRES</th>
+            <th>APELLIDOS</th>
+            <th>DIRECCION</th>
+            <th>TELEFONO</th>
+            <th>T. PROFESIONAL</th>            
+        </tr>
+        @foreach (var vt in Model.ListaVeterinarios){
+            <tr>
+                <td>@vt.Id</td>
+                <td>@vt.Nombres</td>
+                <td>@vt.Apellidos</td>
+                <td>@vt.Direccion</td>
+                <td>@vt.Telefono</td>
+                <td>@vt.TarjetaProfesional</td>                
+            </tr>
+        }
+    </table>
+</section>

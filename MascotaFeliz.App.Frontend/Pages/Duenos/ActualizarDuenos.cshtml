@@ -1,0 +1,44 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.ActualizarDuenosModel
+@{
+}
+
+<section class="block-form">
+    <!-- dentro de este va la imagen de cabecera -->
+    <div class="header-form">
+        <img src="~/images/actualizar-dueno.png" alt="">
+    </div>
+    <!-- dentro de este va el formulario -->
+    <div class="container-form">
+        <form action="" method="post">
+            <!-- en este form va nuestro contenido de etiquetas inputs botones -->
+            <input name="Id" type="hidden" value=@Model.DuenoActualizacion.Id>
+            <div class="row-form">
+                <label>Nombre:</label>
+                <input name="Nombres" class="textBox" type="text" value="@Model.DuenoActualizacion.Nombres" required>
+            </div>
+            <div class="row-form">
+                <label>Apellido:</label>
+                <input name="Apellidos" class="textBox" type="text" value="@Model.DuenoActualizacion.Apellidos" required>
+            </div>
+            <div class="row-form">
+                <label>Direccion:</label>
+                <input name="Direccion" class="textBox" type="text" value="@Model.DuenoActualizacion.Direccion" required>
+            </div>
+            <div class="row-form">
+                <label>Telefono:</label>
+                <input name="Telefono" class="textBox" type="text" value="@Model.DuenoActualizacion.Telefono" required>
+            </div>
+            <div class="row-form">
+                <label>Correo:</label>
+                <input name="Correo" class="textBox" type="text" value="@Model.DuenoActualizacion.Correo" required>
+            </div>
+            <div class="row-form">
+                <!-- coloco un contenedor vacio al principo y al final para que centre y no tener que hacer otra clase -->
+                <div></div>
+                <button class="main-button">Actualizar</button>
+                <div></div>
+            </div>                
+        </form>
+    </div>
+</section>

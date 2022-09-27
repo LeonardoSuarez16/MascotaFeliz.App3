@@ -1,0 +1,109 @@
+/* lista de colores
+
+azules del mas claro al mas oscuro
+#e2f7f5  #78ada9  #377874
+
+naranja
+#ffb969
+
+escala de grises de claro a oscuro
+#fefefe  #cbd5d4  #515151
+*/
+
+/* el simbolo del asterisco quiere decir que selecciona TODOS los elementos */
+*{
+    margin: 0rem;
+    padding: 0rem;
+    font-family: 'Roboto', sans-serif; 
+    color: #515151;   
+}
+
+/* el cuerpo del documento la parte visible */
+body{
+    background-color: #e2f7f5;
+}
+
+
+/* a todas la etiquetas nav que esten dentro de la etiqueta header... */
+header nav{
+    background-color: #377874;
+    color: #fefefe;
+    height: 4rem;
+    font-size: 30px;
+    /*display activa las opciones del justificado*/
+    display: flex;
+    /*aligh centra vertical*/
+    align-items: center;
+    /*centra horizontal*/
+    justify-content: center;
+}
+
+/*contenedor del formulario*/
+.block-form{
+    width: 670px;
+    /*sirve para centrar horizontalmente*/
+    margin: 1rem auto;
+
+}
+
+.header-form{
+    padding: 0rem;
+    margin: 0rem;
+    height: 220px;
+}
+
+
+/*    border: #515151 1px solid;*/
+
+
+form{
+    background-color: #ffb969;
+    /*ajusta las curvas de las esquinas individualmente siendo la primera la superior izquierda y la ultima la inferior derecha*/
+    border-radius: 0rem 0rem 2rem 2rem;
+    padding-bottom: 10px;
+}
+
+.row-form{
+    display: flex;
+    margin-left: 35px;
+    margin-bottom: 1rem;
+    width: 600px;
+    justify-content:space-between;  
+}
+
+label{
+    /*cantidad de negrita de la fuente*/
+    font-weight: 500;
+
+}
+
+/*cajas de texto*/
+.textBox{
+    border: 0rem;
+    border-radius: 0.25rem;
+    width: 475px;
+    height: 1.5rem;
+}
+
+.main-button{
+    border: 0px;
+    border-radius: 10rem;
+    background-color: #515151;
+    color: #fefefe;
+    width: 150px;
+    height: 2rem;
+    font-weight: 700;
+}
+
+/*propiedades para cuando el mouse este encima*/
+.main-button:hover{
+    transition: background-color 0.15s ease;
+    background-color: #606060;
+    /*font-weight: 900;*/
+    cursor: pointer;
+}
+#centrado{
+    text-align: center ;
+    height: 50px;
+    border-radius: 10rem;
+}

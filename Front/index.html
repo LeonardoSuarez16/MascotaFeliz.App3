@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="css/style.css">
+    <title>plantilla</title>
+</head>
+<body>
+    <!-- El body por convencion se divide en bloques estos son: -->
+    <!-- el header para la cebcera de la pagina y los menus horizontale -->
+    <!-- las section que son bloques dentro de la pagina -->
+    <!-- el footer que se reserva para el pie de la pagina -->
+    <!-- los aside que son los elementos laterales de la pagina menus verticales y otros -->
+    <header>
+        <!-- aqui va el menu tenemos que definirlo -->
+        <nav>menu</nav>
+    </header>
+    <!-- esta section va a agrupar dos div uno sobre el otro el primero contiene imagen y titulo y el segundo el formulario -->
+    <section class="block-form">
+        <!-- dentro de este va la imagen de cabecera -->
+        <div class="header-form">
+            <img src="images/buscar-mascota.png" alt="">
+        </div>
+        <!-- dentro de este va el formulario -->
+        <div class="container-form">
+            <form action="" method="post">
+                <!-- en este form va nuestro contenido de etiquetas inputs botones -->
+                <div class="row-form">
+                    <label for="id1">Texto:</label>
+                    <input id="id1" class="textBox" type="text">
+                </div>
+                <div class="row-form">
+                    <label for="id2">Otro Texto:</label>
+                    <input id="id2" class="textBox" type="text">                
+                </div>                    
+                <div class="row-form">
+                    <label for="id3">mas Texto:</label>
+                    <input id="id3" class="textBox" type="text">                
+                </div>                
+                <div class="row-form">
+                    <!-- coloco un contenedor vacio al principo y al final para que centre y no tener que hacer otra clase -->
+                    <div></div>
+                    <button class="main-button" type="submit">Texto</button>
+                    <div></div>
+                </div>                
+            </form>
+        </div>
+    </section>
+
+    <footer>
+
+    </footer>
+</body>
+</html>

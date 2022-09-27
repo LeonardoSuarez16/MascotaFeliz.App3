@@ -1,0 +1,120 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.DetalleMascotaModel
+@{
+}
+
+<div style="display: flex; justify-content:space-between;">
+    <form class="form-detalle-mascota" style="max-height:275px;" method="get">
+        <table>
+            <tr>
+                <td colspan="2" style="">
+                    <h1 style="font-size: 1.5rem;">
+                        @Model.MascotaEncontrada.Nombres
+                    </h1>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 100px;font-weight: 700;">Código:</td>
+                <td>@Model.MascotaEncontrada.Id</td>
+            </tr>
+            <tr>
+                <td style="width: 100px;font-weight: 700;">Dueño:</td>
+                <td>@Model.DuenoEncontrado.Nombres @Model.DuenoEncontrado.Apellidos</td>
+            </tr>
+            <tr>
+                <td style="width: 100px;font-weight: 700;">Veterinario:</td>
+                <td>@Model.VeterinarioEncontrado.Nombres @Model.VeterinarioEncontrado.Apellidos</td>
+            </tr>
+            <tr>
+                <td style="width: 100px;font-weight: 700;">Especie:</td>
+                <td>@Model.MascotaEncontrada.Especie</td>
+            </tr>
+            <tr>
+                <td style="width: 100px;font-weight: 700;">Raza:</td>
+                <td>@Model.MascotaEncontrada.Raza</td>
+            </tr>
+            <tr>
+                <td style="width: 100px;font-weight: 700;">Color:</td>
+                <td style="background-color: @Model.MascotaEncontrada.Color; color: @Model.MascotaEncontrada.Color">
+                    @Model.MascotaEncontrada.Color
+                </td>
+            </tr>
+        </table>
+        <div style="margin-top: 1rem; text-align:center">
+            <input type="hidden" name="Id" value=@Model.MascotaEncontrada.Id>
+            <input type="hidden" name="CajitaIdMascota" value=@Model.MascotaEncontrada.Id>
+            <input type="hidden" name="IdVeterinario" value=@Model.VeterinarioEncontrado.Id>
+            <input type="hidden" name="IdHistoria" value=@Model.HistoriaEncontrada.Id>
+            <button class="main-button" asp-area="" asp-page="/Mascotas/ActualizarMascotas">Actualizar</button>
+            <button class="main-button" asp-area="" asp-page="/Visitas/CrearVisitas">Agregar Visita</button>
+        </div>
+    </form>
+
+    <form class="form-detalle-mascota" style="width: 68%;" method="get">
+        <spam style="font-size: 1.5rem;">Historia Clínica</spam><br>
+        <spam style="font-size: 1rem;">Ingreso: @Model.HistoriaEncontrada.FechaInicial.ToString("MMMM dd, yyyy")</spam>
+        <br><br>
+        <table>
+            @foreach (var visita in Model.ListaVisitas)
+            {
+                <tr>
+                    <td>
+                        <form action="" method="get">
+                            <table>
+                                <tr>
+                                    <td class="labelDetails">Fecha de Visita: </td>
+                                    <td class="datosDetails">@visita.FechaVisita.ToString("MMMM dd, yyyy")</td>
+                                </tr>
+                                <tr>
+                                    <td class="labelDetails">Veterinario: </td>
+                                    <td class="datosDetails">
+                                        @Model._repoVeterinario.GetFullNameVeterinario(visita.IdVeterinario)</td>
+                                </tr>
+                                <tr>
+                                    <td class="labelDetails">Peso: </td>
+                                    <td class="datosDetails">@visita.Peso Kilogramos</td>
+                                </tr>
+                                <tr>
+                                    <td class="labelDetails">Temperatura: </td>
+                                    <td class="datosDetails">@visita.Temperatura Grados Celsius</td>
+                                </tr>
+                                <tr>
+                                    <td class="labelDetails">Frecuencia Respiratoria: </td>
+                                    <td class="datosDetails">@visita.FrecuenciaRespiratoria por Minuto</td>
+                                </tr>
+                                <tr>
+                                    <td class="labelDetails">Frecuencia Cardiaca: </td>
+                                    <td class="datosDetails">@visita.FrecuenciaCardiaca por Minuto</td>
+                                </tr>
+                                <tr>
+                                    <td class="labelDetails">Estado de Animo: </td>
+                                    <td class="datosDetails">@visita.EstadoAnimo</td>
+                                </tr>
+                                <tr>
+                                    <td class="labelDetails">Recomendaciones: </td>
+                                    <td class="datosDetails">@visita.Recomendaciones</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="font-weight: 700; width:min-content">
+                                        <input type="hidden" name="IdVisita" value="@visita.Id">
+                                        <button class="detail-button" asp-area="" asp-page="/Visitas/ActualizarVisitas">
+                                            Modificar
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>
+                            <hr>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </table>
+    </form>
+</div>
+
+<div>
+    <form class="form-detalle-mascota" style="display:block; text-align:center;" method="get">
+        <button class="main-button" asp-area="" asp-page="/Mascotas/ListaMascotas">Mostrar Mascotas</button>
+    </form>
+</div>

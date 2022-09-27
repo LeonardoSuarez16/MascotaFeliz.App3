@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MASCOTA FELIZ 2022</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">    
+    
+</head>
+<body>
+    <header>
+        
+<nav class="navbar navbar-expand-lg " >
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Mascota Feliz</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+       
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle main-menu" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+            Mascotas
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" asp-area="" asp-page="/Mascotas/CrearMascotas">Crear</a></li>
+            <li><a class="dropdown-item" asp-area="" asp-page="/Mascotas/BuscarMascotas">Consultar</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" asp-area="" asp-page="/Mascotas/ListaMascotas">Consultar Mascotas</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle main-menu" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dueños
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" asp-area="" asp-page="/Duenos/CrearDuenos">Crear</a></li>
+            <li><a class="dropdown-item" asp-area="" asp-page="/Duenos/BuscarDuenos">Consultar</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" asp-area="" asp-page="/Duenos/ListaDuenos">Consultar Dueños</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle main-menu" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Veterinarios
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" asp-area="" asp-page="/Veterinarios/CrearVeterinarios">Crear</a></li>
+            <li><a class="dropdown-item" asp-area="" asp-page="/Veterinarios/BuscarVeterinarios">Consultar</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" asp-area="" asp-page="/Veterinarios/ListaVeterinarios">Consultar Veterinarios</a></li>
+          </ul>
+        </li>
+        
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+
+
+    </header>
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; Go Go Developers Team 01 - <a asp-area="" asp-page="/Privacy">F a d u l o v e r s</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

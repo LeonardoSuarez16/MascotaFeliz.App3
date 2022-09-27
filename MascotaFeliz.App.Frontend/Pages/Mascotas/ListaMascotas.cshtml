@@ -1,0 +1,60 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.ListaMascotasModel
+
+@{
+}
+
+<section>
+    <h1> LISTADO DE MASCOTAS </h1>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+    @foreach (var mascota in Model.ListaMascotas){
+        <div class="col">
+            <div class="card h-100">
+                <div width="100%" height="140">
+                    <img class="bd-placeholder-img card-img-top"  preserveAspectRatio="xMidYMid slice" focusable="false" src="~/images/@mascota.Especie .jpg" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@mascota.Id - @mascota.Nombres</h5>
+                    <spam class="card-text" style="font-weight: 700;">Color: </spam>
+                    <spam class="card-text"style="background-color:@mascota.Color;color:@mascota.Color">@mascota.Color</spam> <br>
+                    <spam class="card-text" style="font-weight: 700;">Especie: </spam>
+                    <spam class="card-text">@mascota.Especie</spam> <br>
+                    <spam class="card-text" style="font-weight: 700;">Raza: </spam>
+                    <spam class="card-text">@mascota.Raza</spam> <br>              
+                    <spam class="card-text" style="font-weight: 700;">Dueño: </spam>
+                                                           
+                    <spam class="card-text" style="font-weight: 700;">Veterinario: </spam>
+                    
+                    <div style="margin-top: 1rem; text-align:center">
+                        <form class="form-cards" method="get">
+                            <input type="hidden" name="CajitaIdMascota" value="@mascota.Id">
+                            <button class="main-button" asp-area="" asp-page="/Mascotas/DetalleMascota">+ Info</button>
+                            <button class="main-button" asp-area="" asp-page="/Mascotas/ActualizarMascotas">Actualizar</button>
+                        </form>    
+                    </div>                            
+                </div>
+            </div>
+        </div>    
+    }
+    </div>
+    <table class="table table-striped mt-5">
+        <tr>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>COLOR</th>
+            <th>ESPECIE</th>
+            <th>RAZA</th>
+        </tr>
+        @foreach (var mascota in Model.ListaMascotas){
+            <tr>
+                <td>@mascota.Id</td>
+                <td>@mascota.Nombres</td>
+                <td>@mascota.Color</td>
+                <td>@mascota.Especie</td>
+                <td>@mascota.Raza</td>
+            </tr>
+        }
+    </table>
+</section>
+
+

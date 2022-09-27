@@ -1,0 +1,59 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.ListaDuenosModel
+@{
+}
+
+<section>
+    <h1> LISTADO DE DUEÑOS </h1>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+    @foreach (var dn in Model.ListaDuenos){
+        <div class="col">
+            <div class="card h-100"  style="background-color:#DCDCDC;">
+                <div class="card-body">
+                    <h5 class="card-title">@dn.Nombres @dn.Apellidos</h5>
+                    <spam class="card-text" style="font-weight: 700;">Id: </spam>
+                    <spam class="card-text">@dn.Id</spam> <br>
+                    <spam class="card-text" style="font-weight: 700;">Nombres: </spam>
+                    <spam class="card-text">@dn.Nombres</spam> <br>
+                    <spam class="card-text" style="font-weight: 700;">Apellidos: </spam>
+                    <spam class="card-text">@dn.Apellidos</spam> <br>              
+                    <spam class="card-text" style="font-weight: 700;">Direccion: </spam>
+                    <spam class="card-text">@dn.Direccion</spam> <br>                                        
+                    <spam class="card-text" style="font-weight: 700;">Telefono: </spam>
+                    <spam class="card-text">@dn.Telefono</spam> <br>
+                    <spam class="card-text" style="font-weight: 700;">Correo: </spam>
+                    <spam class="card-text">@dn.Correo</spam> <br>                                                            
+                    <div style="margin-top: 1rem; text-align:center">
+                        <form class="form-cards" method="get">
+                            <input type="hidden" name="idDueno" value="@dn.Id">
+                            <input type="hidden" name="Id" value="@dn.Id">
+                            <button class="main-button" asp-area="" asp-page="/Duenos/DetallesDuenos">+ Info</button>
+                            <button class="main-button" asp-area="" asp-page="/Duenos/ActualizarDuenos">Actualizar</button>
+                        </form>    
+                    </div>                            
+                </div>
+            </div>
+        </div>    
+    }
+    </div>
+    <table class="table table-striped mt-5">
+        <tr>
+            <th>ID</th>
+            <th>NOMBRES</th>
+            <th>APELLIDOS</th>
+            <th>DIRECCION</th>
+            <th>TELEFONO</th>
+            <th>CORREO</th>            
+        </tr>
+        @foreach (var dn in Model.ListaDuenos){
+            <tr>
+                <td>@dn.Id</td>
+                <td>@dn.Nombres</td>
+                <td>@dn.Apellidos</td>
+                <td>@dn.Direccion</td>
+                <td>@dn.Telefono</td>
+                <td>@dn.Correo</td>                
+            </tr>
+        }
+    </table>
+</section>

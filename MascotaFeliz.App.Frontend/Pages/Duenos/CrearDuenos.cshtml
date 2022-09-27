@@ -1,0 +1,48 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.CrearDuenosModel
+@{
+}
+
+
+
+<section class="block-form">
+      <!-- dentro de este va la imagen de cabecera -->
+      <div class="header-form">
+          <img src="~/images/registrar-dueno.png" alt="">
+      </div>
+      <!-- dentro de este va el formulario -->
+      <div class="container-form">
+          <form action="" method="post">
+              <!-- en este form va nuestro contenido de etiquetas inputs botones -->
+              
+              <div class="row-form">
+                  <label for="idNombre">Nombres:</label>
+                  <input name="nombredueno" id="idNombre" class="textBox" type="text" required>                
+              </div>                    
+              <div class="row-form">
+                  <label for="idApellido">Apellidos:</label>
+                  <input name="apellidodueno" id="idApellido" class="textBox" type="text" required>                
+              </div>  
+              <div class="row-form">
+                <label for="idDireccion">Dirección:</label>
+                <input name="direcciondueno" id="idDireccion" class="textBox" type="text" required>                 
+            </div>
+            <div class="row-form">
+              <label for="idTelefono">Teléfono:</label>
+              <input name="telefonodueno" id="idTelefono" class="textBox" type="text" required>                
+          </div>
+          <div class="row-form">
+              <label for="idCorreo">Correo:</label>
+              <input name="correodueno" id="idCorreo" class="textBox" type="email" required>                
+          </div>                        
+          <div class="row-form">
+                  <!-- coloco un contenedor vacio al principo y al final para que centre y no tener que hacer otra clase -->
+                  <div></div>
+                  <button class="main-button" type="submit">Crear Dueño</button>
+                  <div></div>
+              </div>                
+          </form>
+      </div>
+  </section>
+
+

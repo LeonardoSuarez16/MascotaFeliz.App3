@@ -1,0 +1,69 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.CrearVisitasModel
+@{
+}
+
+<section class="block-form">
+    <div class="header-form">
+        <img src="~/images/registrar-visita.png" alt="">
+    </div>
+    <div class="container-form">
+        <form action="" method="post">
+            <input type="hidden" name="IdMascota" value="@Model.MascotaEncontrada.Id">
+            <input type="hidden" name="IdHistoria" value="@Model.HistoriaVisita.Id">
+
+            <div class="row-form">
+                <label for="idFechaV">Fecha Visita:</label>
+                <input name="fechaVisita" id="idFechaV" class="textBox" type="datetime-local" required>                
+            </div>     
+            <div class="row-form">
+                <label for="idVeterinario">Veterinario:</label>
+                <select name="selectVeterinario" class="textBox">
+                    @foreach (var elVeterinario in Model.ListaVeterinarios){
+                        <option value="@elVeterinario.Id">@elVeterinario.Nombres @elVeterinario.Apellidos</option>
+                    }
+                </select> 
+            </div>   
+            <div class="row-form">
+                <label for="idTemperatura">Temperatura:</label>
+                <input name="temperatura" id="idTemperatura" class="textBox" type="text" required>                
+            </div>
+            <div class="row-form">
+                <label for="idPeso">Peso:</label>
+                <input name="peso" id="idPeso" class="textBox" type="text" required>                
+            </div>                            
+            <div class="row-form">
+                <label for="idFrespiratoria">Fr. Respiratoria:</label>
+                <input name="frespiratoria" id="idFrespiratoria" class="textBox" type="text" required>                
+            </div>                            
+            <div class="row-form">
+                <label for="idFcardiaca">Fr. Cardiaca:</label>
+                <input name="fcardiaca" id="idFcardiaca" class="textBox" type="text" required>                
+            </div>
+            <div class="row-form">
+                <label for="idAnimo">Animo:</label>
+                <input name="animo" id="idAnimo" class="textBox" type="text" required>                
+            </div>                          
+            <div class="row-form">
+                <label for="idRecomendaciones">Indicaciones:</label>
+                <textarea name="recomendaciones" id="idRecomendaciones" class="AreaText" type="textarea" rows="5"></textarea>                
+            </div>                          
+
+            <div class="row-form">
+                <!-- coloco un contenedor vacio al principo y al final para que centre y no tener que hacer otra clase -->
+                <div></div>
+                <button class="main-button" type="submit">Registrar</button>
+                <div></div>
+            </div>                
+        </form>
+        <form class="form-detalle-mascota" style="display:block; text-align:center;" method="get">
+            <div></div>
+                <input type="hidden" name="CajitaIdMascota" value="@Model.MascotaEncontrada.Id">            
+                <button class="detail-button" asp-area="" asp-page="/Mascotas/DetalleMascota">
+                    Detalle Mascota
+                </button>
+            <div></div>
+        </form>
+    </div>
+</section>               
+

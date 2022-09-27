@@ -1,0 +1,66 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.ActualizarVisitasModel
+@{
+}
+<h1>actualizando visitas</h1>
+<section class="block-form">
+    <div class="header-form">
+        <img src="~/images/registrar-mascota.png" alt="">
+    </div>
+    <div class="container-form">
+        <form action="" method="post">
+            <div class="row-form">
+                <label for="idFechaV">Fecha Visita:</label>
+                <input name="fechaVisita" id="idFechaV" class="textBox" type="datetime-local" value="@Model.FechaProcesada" required>                
+            </div>     
+            <div class="row-form">
+                <label for="idVeterinario">Veterinario:</label>
+                <select name="selectVeterinario" class="textBox">
+                    @foreach (var elVeterinario in Model.ListaVeterinarios){
+                        if(elVeterinario.Id==@Model.Visita.IdVeterinario)
+                        {
+                            <option value="@elVeterinario.Id" selected>@elVeterinario.Nombres @elVeterinario.Apellidos</option>
+                        }
+                        else
+                        {
+                            <option value="@elVeterinario.Id">@elVeterinario.Nombres @elVeterinario.Apellidos</option>
+                        }
+                    }
+                </select> 
+            </div>   
+            <div class="row-form">
+                <label for="idTemperatura">Temperatura:</label>
+                <input name="temperatura" id="idTemperatura" class="textBox" type="text" value="@Model.Visita.Temperatura" required>                
+            </div>
+            <div class="row-form">
+                <label for="idPeso">Peso:</label>
+                <input name="peso" id="idPeso" class="textBox" type="text" value="@Model.Visita.Peso"  required>                
+            </div>                            
+            <div class="row-form">
+                <label for="idFrespiratoria">Fr. Respiratoria:</label>
+                <input name="frespiratoria" id="idFrespiratoria" class="textBox" type="text" value="@Model.Visita.FrecuenciaRespiratoria" required>                
+            </div>                            
+            <div class="row-form">
+                <label for="idFcardiaca">Fr. Cardiaca:</label>
+                <input name="fcardiaca" id="idFcardiaca" class="textBox" type="text" value="@Model.Visita.FrecuenciaCardiaca" required>                
+            </div>
+            <div class="row-form">
+                <label for="idAnimo">Animo:</label>
+                <input name="animo" id="idAnimo" class="textBox" type="text" value="@Model.Visita.EstadoAnimo" required>                
+            </div>                          
+            <div class="row-form">
+                <label for="idRecomendaciones">Indicaciones:</label>
+                <textarea name="recomendaciones" id="idRecomendaciones" class="AreaText" type="textarea" rows="5">@Model.Visita.Recomendaciones</textarea>                
+            </div>                          
+
+            <div class="row-form">
+                <!-- coloco un contenedor vacio al principo y al final para que centre y no tener que hacer otra clase -->
+                <div></div>
+                <input type="hidden" name="IdVisita" value="@Model.Visita.Id">
+                <button class="main-button" type="submit">Registrar</button>
+                <div></div>
+            </div>                
+        </form>
+
+    </div>
+</section>

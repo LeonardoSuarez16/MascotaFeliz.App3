@@ -1,0 +1,77 @@
+﻿@page
+@model MascotaFeliz.App.Frontend.Pages.CrearMascotasModel
+@{
+}
+
+<section class="block-form">
+      <!-- dentro de este va la imagen de cabecera -->
+      <div class="header-form">
+          <img src="~/images/registrar-mascota.png" alt="">
+      </div>
+      <!-- dentro de este va el formulario -->
+      <div class="container-form">
+          <form action="" method="post" enctype="multipart/form-data">
+              <!-- en este form va nuestro contenido de etiquetas inputs botones -->
+              <div class="row-form">
+                  <label for="idNombre">Nombre:</label>
+                  <input name="nombremascota" id="idNombre" class="textBox" type="text" required>                
+              </div>                    
+              <div class="row-form">
+                  <label for="idColor">Color:</label>
+                  <input name="colormascota" id="idColor" class="textBox" type="color">                
+              </div>  
+              <div class="row-form">
+                <label for="idEspecie">Especie:</label>
+                <select name="especiemascota" class="textBox">
+                  <option value="Canino">Canino</option>
+                  <option value="Felino">Felino</option>
+                  <option value="Ave">Ave</option>
+                  <option value="Roedor">Roedor</option>
+                  <option value="Pez">Pez</option>
+                  <option value="Reptil">Reptil</option>                  
+                  <option value="Anfibio">Anfibio</option>  
+                  <option value="Hominido">Hominido</option>                                  
+                  <option value="Equino">Equino</option>
+                  <option value="Vacuno">Vacuno</option>
+                  <option value="Ovino">Ovino</option>
+                  <option value="Caprino">Caprino</option>                                    
+                  <option value="Otro">Otro</option>                                                      
+                </select>
+            </div>
+            <div class="row-form">
+              <label for="idRaza">Raza:</label>
+              <input name="razamascota" id="idRaza" class="textBox" type="text">                
+            </div>                     
+            <div class="row-form">
+                <label for="idDueno">Dueño:</label>
+                <select name="selectDueno" class="textBox">
+                @foreach (var elDueno in Model.ListaDuenos){
+                  <option value="@elDueno.Id">@elDueno.Nombres @elDueno.Apellidos</option>
+                }
+                </select> 
+            </div>  
+            <div class="row-form">
+              <label for="idVeterinario">Veterinario:</label>
+              <select name="selectVeterinario" class="textBox">
+                @foreach (var elVeterinario in Model.ListaVeterinarios){
+                  <option value="@elVeterinario.Id">@elVeterinario.Nombres @elVeterinario.Apellidos</option>
+                }
+              </select> 
+          </div>
+
+          <div class="row-form">
+                  <label for="idFoto">Foto:</label>
+                  <input name="fotomascota" id="idFoto" class="textBox" type="file">                
+              </div>   
+                            
+                           
+              <div class="row-form">
+                  <!-- coloco un contenedor vacio al principo y al final para que centre y no tener que hacer otra clase -->
+                  <div></div>
+                  <button class="main-button" type="submit">Registrar</button>
+                  <div></div>
+              </div>                
+          </form>
+      </div>
+  </section>
+
